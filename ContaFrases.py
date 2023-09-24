@@ -1,3 +1,5 @@
+frase3 = "Essa  essa frase: eu estou$$ usaNdo como um tEste, teste usando um um um" 
+
 def remove_pontos(frase):
 
     alfabeto = ["a" , "b" , "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] #, "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -27,7 +29,7 @@ def remove_pontos(frase):
 
     return frasefin
 
-frase3 = "Essa  essa frase: eu estou$$ usaNdo como um tEste, teste usando um um um , um"   
+  
  
 frasefin = (remove_pontos(frase3))
 
