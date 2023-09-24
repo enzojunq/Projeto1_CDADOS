@@ -1,9 +1,11 @@
-frase3 = "Essa  essa frase: eu estou$$ usaNdo como um tEste, teste usando um um um" 
+frase3 = "um dôis TRes quatro cinco seis sete oito nove dez onze doze quatro quatro quatro" 
 
+frase4 = " um dois tres quatro cinco sete seis oito nove"
 def remove_pontos(frase):
 
     alfabeto = ["a" , "b" , "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] #, "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
+    acentos = ["á" , "é", "í" , "ó" , "ú" , "ñ" , "â" , "ê" , "î" , "ô" , "û" , "à" , "è" , "ì" , "ù" , "ò"]
     frasefin = []
 
     palavra = []
@@ -13,6 +15,25 @@ def remove_pontos(frase):
         if i.isupper():
              g = i.lower()
              i = g
+
+        if i == "á"or i == "â" or i == "à":
+             i = "a"
+
+        elif i == "é"or i == "ê" or i == "è":
+             i = "e"
+
+        elif i == "í"or i == "î" or i == "ì":
+             i = "i"
+
+        elif i == "ú"or i == "û" or i == "ù":
+             i = "u"
+
+        elif i == "ó"or i == "ô" or i == "ò":
+             i = "o"
+
+        elif i == "ñ":
+             i = "n"
+        
 
         if i in alfabeto:
             palavra.append(i)
@@ -27,38 +48,130 @@ def remove_pontos(frase):
                 frasefin.append(new)
                 palavra = []
 
+    if len(palavra) > 1:
+         
+        new2 = "".join(palavra)
+        frasefin.append(new2)
+        palavra = []
+
     return frasefin
 
   
  
-frasefin = (remove_pontos(frase3))
+#frasefin = (remove_pontos(frase3))
 
-print(frasefin)
+#print(frasefin)
 
-palavrascont = {} # fora do  If review = conteudo
+#palavrascont = {} # fora do  If review = conteudo
 
-for i in range(len(frasefin)):
+def conta_palavras(listapal , dicpalavras):
+     
+    for i in range(len(listapal)):
 
-        palavra = frasefin[i]
+        palavra = listapal[i]
 
-        if palavra in palavrascont:
-            palavrascont[palavra] += 1
+        if palavra in dicpalavras:
+            dicpalavras[palavra] += 1
            
             
-        elif palavra not in palavrascont:
-            palavrascont[frasefin[i]] = 1
+        elif palavra not in dicpalavras:
+            dicpalavras[listapal[i]] = 1
+    
+    return dicpalavras
 
-print(palavrascont)
+#palavrasconteudo = conta_palavras(frasefin , palavrascont)
 
-print(palavrascont.values())
+#print(palavrasconteudo)
 
-totalpalavrascont = 0  # vai fora do If review = conteudo
+#print(palavrasconteudo.values())
 
-totalpalavrascont += sum(palavrascont.values())
+#totalpalavrascont = 0  # vai fora do If review = conteudo
 
-print(totalpalavrascont)
+#totalpalavrascont += sum(palavrasconteudo.values())
 
-print(palavrascont["um"])
+#print(totalpalavrascont)
+
+#print(palavrascont["quatro"])
+
+# 1 = conteudo 2 = amazon 3 = edicao
+
+classificacao = 1
+
+palavrascont = {}
+palavrasamazon = {}
+palavrasedicao = {}
+
+totalpalavrascont = 0
+totalpalavrasamazon = 0
+totalpalavrasedicao = 0
+
+if classificacao == 1:
+
+    listafrase = remove_pontos(frase3)
+
+    totalpalavras = conta_palavras(listafrase , palavrascont)
+
+    totalpalavrascont = sum(totalpalavras.values())
+
+elif classificacao == 2:
+
+    listafrase = remove_pontos(frase3)
+
+    totalpalavras = conta_palavras(listafrase , palavrasamazon)
+
+    totalpalavrasamazon = sum(totalpalavras.values())
+
+elif classificacao == 3:
+
+    listafrase = remove_pontos(frase3)
+
+    totalpalavras = conta_palavras(listafrase , palavrasedicao)
+
+    totalpalavrasedicao = sum(totalpalavras.values())
+
+
+print("Total de palavras em conteudo: " + str(totalpalavrascont))
+print("Total de palavras em amazon: " + str(totalpalavrasamazon))
+print("Total de palavras em edicao: " + str(totalpalavrasedicao))
+
+print(palavrascont["quatro"])
+
+
+
+classificacao = 1
+
+
+if classificacao == 1:
+
+    listafrase = remove_pontos(frase4)
+
+    totalpalavras = conta_palavras(listafrase , palavrascont)
+
+    totalpalavrascont = sum(totalpalavras.values())
+
+elif classificacao == 2:
+
+    listafrase = remove_pontos(frase4)
+
+    totalpalavras = conta_palavras(listafrase , palavrasamazon)
+
+    totalpalavrasamazon = sum(totalpalavras.values())
+
+elif classificacao == 3:
+
+    listafrase = remove_pontos(frase4)
+
+    totalpalavras = conta_palavras(listafrase , palavrasedicao)
+
+    totalpalavrasedicao = sum(totalpalavras.values())
+
+
+
+print("Total de palavras em conteudo: " + str(totalpalavrascont))
+print("Total de palavras em amazon: " + str(totalpalavrasamazon))
+print("Total de palavras em edicao: " + str(totalpalavrasedicao))
+
+
 
 
 
