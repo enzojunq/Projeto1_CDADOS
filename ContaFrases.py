@@ -1,9 +1,10 @@
-frase3 = "Essa  essa frase: eu estou$$ usaNdo como um tEste, teste usando um um um" 
+frase3 = "essa  Èssa frase: eu stou$$ usaNdo como um tEste, teste usando um um um " 
 
 def remove_pontos(frase):
 
     alfabeto = ["a" , "b" , "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] #, "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
+    acentos = ["á" , "é", "í" , "ó" , "ú" , "ñ" , "â" , "ê" , "î" , "ô" , "û" , "à" , "è" , "ì" , "ù" , "ò"]
     frasefin = []
 
     palavra = []
@@ -13,6 +14,25 @@ def remove_pontos(frase):
         if i.isupper():
              g = i.lower()
              i = g
+
+        if i == "á"or i == "â" or i == "à":
+             i = "a"
+
+        elif i == "é"or i == "ê" or i == "è":
+             i = "e"
+
+        elif i == "í"or i == "î" or i == "ì":
+             i = "i"
+
+        elif i == "ú"or i == "û" or i == "ù":
+             i = "u"
+
+        elif i == "ó"or i == "ô" or i == "ò":
+             i = "o"
+
+        elif i == "ñ":
+             i = "n"
+        
 
         if i in alfabeto:
             palavra.append(i)
@@ -26,6 +46,12 @@ def remove_pontos(frase):
                 new = "".join(palavra)
                 frasefin.append(new)
                 palavra = []
+
+    if len(palavra) > 1:
+         
+        new2 = "".join(palavra)
+        frasefin.append(new2)
+        palavra = []
 
     return frasefin
 
