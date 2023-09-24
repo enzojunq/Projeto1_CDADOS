@@ -1,4 +1,4 @@
-frase3 = "essa  Èssa frase: eu stou$$ usaNdo como um tEste, teste usando um um um " 
+frase3 = "um dois tres quatro cinco seis sete oito nove dez onze doze quatro quatro quatro" 
 
 def remove_pontos(frase):
 
@@ -63,28 +63,34 @@ print(frasefin)
 
 palavrascont = {} # fora do  If review = conteudo
 
-for i in range(len(frasefin)):
+def conta_palavras(listapal , dicpalavras):
+     
+    for i in range(len(listapal)):
 
-        palavra = frasefin[i]
+        palavra = listapal[i]
 
-        if palavra in palavrascont:
-            palavrascont[palavra] += 1
+        if palavra in dicpalavras:
+            dicpalavras[palavra] += 1
            
             
-        elif palavra not in palavrascont:
-            palavrascont[frasefin[i]] = 1
+        elif palavra not in dicpalavras:
+            dicpalavras[listapal[i]] = 1
+    
+    return dicpalavras
 
-print(palavrascont)
+palavrasconteudo = conta_palavras(frasefin , palavrascont)
 
-print(palavrascont.values())
+print(palavrasconteudo)
+
+print(palavrasconteudo.values())
 
 totalpalavrascont = 0  # vai fora do If review = conteudo
 
-totalpalavrascont += sum(palavrascont.values())
+totalpalavrascont += sum(palavrasconteudo.values())
 
 print(totalpalavrascont)
 
-print(palavrascont["um"])
+print(palavrascont["quatro"])
 
 
 
