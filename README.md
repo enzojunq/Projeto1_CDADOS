@@ -38,17 +38,17 @@ comuns (frequentes) nas mensagens de cada categoria.
 Considerando agora apenas as mensagens classificadas armazenadas no arquivo
 dados_teste.xlsx, seu objetivo aqui é testar a qualidade do seu classificador.
 Para tanto, você deve extrair as seguintes contagens:
-✔Porcentagem de verdadeiros positivos (Ex: mensagens relevantes e que são
+  ✔Porcentagem de verdadeiros positivos (Ex: mensagens relevantes e que são
 classificadas como relevantes)
-✔Porcentagem de falsos positivos (Ex: mensagens irrelevantes e que são classificadas
+  ✔Porcentagem de falsos positivos (Ex: mensagens irrelevantes e que são classificadas
 como relevantes)
-✔Porcentagem de verdadeiros negativos (Ex: mensagens irrelevantes e que são
+  ✔Porcentagem de verdadeiros negativos (Ex: mensagens irrelevantes e que são
 classificadas como irrelevantes)
-✔Porcentagem de falsos negativos (Ex: mensagens relevantes e que são classificadas
+  ✔Porcentagem de falsos negativos (Ex: mensagens relevantes e que são classificadas
 como irrelevantes)
-✔Acurácia (mensagens corretamente classificadas, independente da categoria)
+  ✔Acurácia (mensagens corretamente classificadas, independente da categoria)
 
-6. Qualidade do Classificador a partir de novas separações das notícias entre
+7. Qualidade do Classificador a partir de novas separações das notícias entre
 Treinamento e Teste
 Um importante passo no aprendizado de máquina é trabalhar com uma boa base de dados
 para o treinamento e teste do seu classificador. Entretanto, é razoável pensar que a divisão
@@ -58,15 +58,15 @@ Assim sendo, aqui o objetivo é avaliar como as notícias contidas na base de da
 treinamento podem interferir numa melhor ou não tão boa classificação das mensagens
 contidas na base de teste.
 Nesse caso, faça:
-✔Junte todas as mensagens do Treinamento e do Teste em único dataframe (vamos
+  ✔Junte todas as mensagens do Treinamento e do Teste em único dataframe (vamos
 supor que sejam 500) e separe, de forma aleatória, 300 mensagens para ficar na base
 de dados treinamento e 200 na base de dados teste. Obs.: Apenas aqui sua dupla
 poderá usar alguma biblioteca que possua um comando já pronto que realiza essa
 separação na base de dados (procure no google ''split em train e test");
-✔Para cada base separada, faça os itens de 4 a 5 descritos no tópico Etapas do
+  ✔Para cada base separada, faça os itens de 4 a 5 descritos no tópico Etapas do
 projeto e guarde os percentuais de acertos (= % de positivos verdadeiros + % de
 negativos verdadeiros);
-✔Repita os dois passos acima 100 vezes.
+  ✔Repita os dois passos acima 100 vezes.
 Construa um histograma com esses percentuais de acertos e discuta o resultado do
 histograma refletindo sobre possíveis vantagens ou desvantagens sobre construir um
 Classificador considerando uma única vez a divisão da base de dados em treinamento e em
