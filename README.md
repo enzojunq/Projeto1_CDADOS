@@ -75,5 +75,8 @@ teste.
 
 
 ## Alunos
-- Enzo
-- Thomas
+- [Enzo Junqueira][enzo]
+- [Thomas Rudge][thomas]
+
+[enzo]: https://github.com/enzojunq
+[thomas]: https://github.com/thomasrudge
