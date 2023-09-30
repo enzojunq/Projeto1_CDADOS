@@ -1,5 +1,5 @@
 # Projeto1_CDADOS
-O Projeto 1 da matéria de Ciência dos Dados cursado na graduação de Engenharia de Computação no Insper é um classificador de textos utilizando o Naive Bayes.
+O Projeto 1 da matéria de Ciência dos Dados cursado na graduação de Engenharia de Computação no [Insper][insper] é um classificador de textos utilizando o Naive Bayes.
 
 ### ETAPAS DO PROJETO
 
@@ -80,3 +80,4 @@ teste.
 
 [enzo]: https://github.com/enzojunq
 [thomas]: https://github.com/thomasrudge
+[insper]: https://www.insper.edu.br/
